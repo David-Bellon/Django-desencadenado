@@ -8,5 +8,7 @@ def index(request):
 def search(request):
     if request.method == "POST":
         data = request.POST.get("textfield", None)
-        html = ("<H1>%s</H1>", data)
+        html = ("<H1></H1>", data)
         return HttpResponse(html)
+    else:
+        return render(request, 'hola.html')
