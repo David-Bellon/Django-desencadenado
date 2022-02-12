@@ -7,7 +7,7 @@ def index(request):
 
 def search(request):
     if request.method == "POST":
-        data = request.POST.get("textfield", None)
+        data = request.POST.get("textfield", None)                       
         context = {
             "texto": data
         }
