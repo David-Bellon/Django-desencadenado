@@ -1,9 +1,14 @@
 
 {% extends 'base.html' %}
 
-{% block content %}
+{% load static %}
 
-<h1 id="Titulo_pagina">Pagina principal</h1>
+{% block content %}
+<header>
+    <div id="header_div">
+        <img src="{% static 'images/koi.jpg' %}" alt="Probelmas Bro" id="koi_header">   
+    </div>
+</header>
 <hr>
 <h1>Lista de cosas</h1>
 <ul>

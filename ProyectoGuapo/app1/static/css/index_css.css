@@ -1,9 +1,18 @@
 
 body {
     padding-left: 10px;
-    background-color: blueviolet;
 }
 
 #Titulo_pagina {
     text-align: center;
+}
+
+#header_div {
+    width: max-content;
+    height: 300px;
+}
+
+#koi_header{
+    max-width: 100%;
+    max-height: 100%;
 }
