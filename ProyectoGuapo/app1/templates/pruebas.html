@@ -1,5 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Texto de Prubea</h1>
+<form method="post">
+    {% csrf_token %}
+        <label>Introduce tu nombre</label><br>
+        <input type="text" name="textfield"><br>
+        <label>Introduce tu correo</label><br>
+        <input type="email" name="emailfield"><br>
+        <label>Contraseña</label><br>
+        <input type="password" name="passwordfield"><br><br>
+        <button type="submit">Send email</button><br>
+</form>
+
+<h1>{{error}}</h1>
 {% endblock %}
