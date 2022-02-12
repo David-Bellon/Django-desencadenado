@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
+from .models import Usuarios
 # Create your views here.
 
 def index(request):
@@ -17,18 +18,20 @@ def search(request):
 
 def nada(request):
     if request.method == "POST":
-        name = request.POST.get("textfield")
+        user = request.POST.get("textfield")
         email = request.POST.get("emailfield")
         password = request.POST.get("passwordfield")
+        
         context = {
-            "name": name,
+            "name": user,
             "email": email,
             "pass": password
         }
-        if str(name) == "" or str(email) == "" or str(password) == "":
+        if str(user) == "" or str(email) == "" or str(password) == "":
             context = {"error": "Algunos de los campos esta vacio"}
             return render(request, "pruebas.html", context)
         else:
+            Usuarios.objects.create(name= user, password= password)
             return render(request, "pruebas.html", context)
         
     else:
