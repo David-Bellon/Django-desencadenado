@@ -16,4 +16,4 @@ def search(request):
         return render(request, 'hola.html')
 
 def nada(request):
-    render (request, "pruebas.html")
+    return render(request, "pruebas.html")
