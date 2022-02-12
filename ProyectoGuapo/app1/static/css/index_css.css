@@ -1,18 +1,29 @@
 
 body {
-    padding-left: 10px;
+    background-color: blueviolet;
 }
 
 #Titulo_pagina {
     text-align: center;
 }
 
-#header_div {
-    width: max-content;
-    height: 300px;
+#cosa_pequeña p{
+    color: white;
+    text-align: center;
 }
 
-#koi_header{
-    max-width: 100%;
-    max-height: 100%;
+#cosa_pequeña{
+    position: relative;
+    width: 100%;
+    z-index: 0;
+    left: 0;
+    height: 20px;
+    background-color: black;
+}
+
+#koi_header {
+    display: block;
+    position: relative;
+    left: 0%;
+    width: 100%;
 }
