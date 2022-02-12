@@ -1,12 +1,19 @@
 
 {% extends 'base.html' %}
 {% block content %}
-
+<h1>Formulario to guapo</h1>
 <form method="POST" action="search/">
     {% csrf_token %}
     <input type="text" name="textfield">
     
     <button type="submit">Upload text</button>
-    </form>
+</form>
+<br>
+<h1>Lista de cosas</h1>
+<ul>
+    <li><a href="mostrar/">Buscar</a></li>
+    <li><a href="{% url ''}">No se si funciona</a></li>
+</ul>
+
 
 {% endblock %}

@@ -8,7 +8,12 @@ def index(request):
 def search(request):
     if request.method == "POST":
         data = request.POST.get("textfield", None)
-        html = ("<H1></H1>", data)
-        return HttpResponse(html)
+        context = {
+            "texto": data
+        }
+        return render(request, "hola.html", context)
     else:
         return render(request, 'hola.html')
+
+def nada(request):
+    render (request, "pruebas.html")
