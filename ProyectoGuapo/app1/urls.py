@@ -5,6 +5,7 @@ from . import views
 app_name = "app1"
 urlpatterns = [
     path("", views.index, name="index"),
-    path("search/", views.search, name="search"),
+    path("forum/", views.render_forum),
+    path("forum/search/", views.search, name="search"),
     path("mostrar/", views.nada , name="Nose")
 ]

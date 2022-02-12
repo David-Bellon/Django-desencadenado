@@ -17,3 +17,6 @@ def search(request):
 
 def nada(request):
     return render(request, "pruebas.html")
+
+def render_forum(request):
+    return render(request, "form.html")
