@@ -1,10 +1,10 @@
 
 {% extends 'base.html' %}
-{% load static %}
 
 {% block content %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/index_css.css' %}">
-<h1>Formulario to guapo</h1>
+
+<h1 id="Titulo_pagina">Pagina principal</h1>
+
 <form method="POST" action="search/">
     {% csrf_token %}
     <input type="text" name="textfield">
