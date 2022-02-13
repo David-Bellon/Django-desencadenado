@@ -1,0 +1,60 @@
+#sing_up_box {
+    background-color: aliceblue;
+    width: 300px;
+    height: 560px;
+    border: 10px solid black;border-radius: 30px;
+    padding: 50px;
+    margin: 0 auto;
+    margin-top: 130px;
+}
+#sing_up_box h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    padding-bottom: 3px;
+}
+
+.text_input label {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+    font-size: 17px;
+}
+
+.text_input {
+    height: 100px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.text_input input {
+    width: 300px;
+    margin-top: 10px;
+    border-radius: 10px;
+    height: 23px;
+}
+
+#sing_button {
+    margin-top: 87px;
+    text-align: right;
+    padding-right: 5px;
+}
+
+#sing_button button:hover {
+    background-color: gray;
+    
+}
+
+#sing_button button {
+    background-color: lightblue;
+    border-radius: 23px;
+    width: 110px;
+    height: 60px;
+}
+
+#error_message {
+    height: 5px;
+    text-align: center;
+}
+
+#error_message h4 {
+    color: red;
+}

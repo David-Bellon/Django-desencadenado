@@ -1,17 +1,35 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
-<form method="post">
-    {% csrf_token %}
-        <label>Usuario</label><br>
-        <input type="text" name="textfield"><br>
-        <label>Correo</label><br>
-        <input type="email" name="emailfield"><br>
-        <label>Contraseña</label><br>
-        <input type="password" name="passwordfield"><br><br>
-        <button type="submit">Sing Up</button><br>
-        <h4>{{error}}</h4>
-</form>
+<link rel="stylesheet" type="text/css" href="{% static 'css/sing_up.css' %}">
+<div id="sing_up_box">
+    <form method="post">
+        {% csrf_token %}
+        <h2>Sing Up</h2>
+        <div class="text_input">
+            <label>Usuario</label><br>
+            <input type="text" name="textfield"><br>
+        </div>
+        <div class="text_input">
+            <label>Correo</label><br>
+            <input type="email" name="emailfield"><br>
+        </div>
+        <div class="text_input">
+            <label>Contraseña</label><br>
+            <input type="password" name="passwordfield"><br><br>
+        </div>
+        <div id="error_message">
+            <h4>{{error}}</h4>
+        </div>
+        
+        <div id="sing_button">
+            <button type="submit" title="SingUp">Sing Up</button><br>
+        </div>
+        
+        
+    </form>
+
+</div>
 
 {% for i in meta%}
     <p>{{i.name}}</p>
