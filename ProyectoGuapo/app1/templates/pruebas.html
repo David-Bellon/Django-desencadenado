@@ -3,14 +3,19 @@
 {% block content %}
 <form method="post">
     {% csrf_token %}
-        <label>Introduce tu nombre</label><br>
+        <label>Usuario</label><br>
         <input type="text" name="textfield"><br>
-        <label>Introduce tu correo</label><br>
+        <label>Correo</label><br>
         <input type="email" name="emailfield"><br>
         <label>Contraseña</label><br>
         <input type="password" name="passwordfield"><br><br>
-        <button type="submit">Send email</button><br>
+        <button type="submit">Sing Up</button><br>
+        <h4>{{error}}</h4>
 </form>
 
-<h1>{{error}}</h1>
+{% for i in meta%}
+    <p>{{i.name}}</p>
+    <p>{{i.email}}</p>
+    <p>{{i.password}}</p>
+{% endfor%}
 {% endblock %}

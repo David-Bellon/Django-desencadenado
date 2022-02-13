@@ -1,3 +1,4 @@
+from hashlib import new
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from .models import Usuarios
@@ -25,17 +26,22 @@ def nada(request):
         context = {
             "name": user,
             "email": email,
-            "pass": password
+            "pass": password,
+            "meta": Usuarios.objects.all()
         }
         if str(user) == "" or str(email) == "" or str(password) == "":
-            context = {"error": "Algunos de los campos esta vacio"}
+            context["error"] = "Algunos de los campos esta vacio"
             return render(request, "pruebas.html", context)
         else:
-            Usuarios.objects.create(name= user, password= password)
+            new_user = Usuarios.objects.create(name= user, password= password, email= email)
+            new_user.save()
             return render(request, "pruebas.html", context)
         
     else:
-        return render(request, "pruebas.html")
+        context = {
+                "meta": Usuarios.objects.all()
+            }
+        return render(request, "pruebas.html", context=context)
     
 
 def render_forum(request):
