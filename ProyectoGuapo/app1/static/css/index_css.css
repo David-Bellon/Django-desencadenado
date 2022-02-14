@@ -3,27 +3,6 @@ body {
     background-color: blueviolet;
 }
 
-#Titulo_pagina {
-    text-align: center;
-}
-
-#cosa_pequeña p{
-    color: white;
-    text-align: center;
-}
-
 #cosa_pequeña{
-    position: relative;
-    width: 100%;
-    z-index: 0;
-    left: 0;
-    height: 20px;
-    background-color: black;
-}
-
-#koi_header {
-    display: block;
-    position: relative;
-    left: 0%;
-    width: 100%;
+    width: 100% auto;
 }
