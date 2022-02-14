@@ -17,7 +17,7 @@ def search(request):
     else:
         return render(request, 'hola.html')
 
-def nada(request):
+def sign_up(request):
     if request.method == "POST":
         user = request.POST.get("textfield")
         email = request.POST.get("emailfield")
