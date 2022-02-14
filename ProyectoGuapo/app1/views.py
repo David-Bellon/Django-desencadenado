@@ -31,17 +31,17 @@ def nada(request):
         }
         if str(user) == "" or str(email) == "" or str(password) == "":
             context["error"] = "Algunos de los campos esta vacio"
-            return render(request, "pruebas.html", context)
+            return render(request, "signup.html", context)
         else:
             new_user = Usuarios.objects.create(name= user, password= password, email= email)
             new_user.save()
-            return render(request, "pruebas.html", context)
+            return render(request, "signup.html", context)
         
     else:
         context = {
                 "meta": Usuarios.objects.all()
             }
-        return render(request, "pruebas.html", context=context)
+        return render(request, "signup.html", context=context)
     
 
 def render_forum(request):
