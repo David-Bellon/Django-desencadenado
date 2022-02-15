@@ -15,18 +15,35 @@ body {
 
 #home {
     position: fixed;
-    padding-left: 30px;
+    padding-top: 15px;
+    padding-left: 200px;
     width: 100px;
     height: 40px;
 }
 
 #signup {
     position: fixed;
-    padding-left: 140px;
+    padding-top: 15px;
+    padding-left: 400px;
     width: 100px;
 }
 
-.directions p {
+#shop {
+    position: fixed;
+    padding-top: 15px;
+    padding-left: 600px;
+    width: 100px;
+}
+
+#lol {
+    position: fixed;
+    padding-top: 15px;
+    padding-left: 800px;
+    width: 200px;
+}
+
+.directions a {
+    text-decoration: none;
     color: white;
     text-align: center;
 }
