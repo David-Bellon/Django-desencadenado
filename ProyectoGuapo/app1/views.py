@@ -35,7 +35,9 @@ def sign_up(request):
         else:
             new_user = Usuarios.objects.create(name= user, password= password, email= email)
             new_user.save()
-            return render(request, "signup.html", context)
+            response = render(request, "signup.html", context)
+            response.set_cookie('name', str(user), max_age=600)
+            return response
         
     else:
         context = {
