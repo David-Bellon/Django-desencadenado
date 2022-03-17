@@ -1,1 +1,1 @@
-web: gunicorn pruebanosecuanta.wsgi
+web: gunicorn pruebanosecuanta.wsgi py manage.py runserver
