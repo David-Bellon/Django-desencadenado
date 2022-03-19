@@ -1,4 +1,3 @@
-from hashlib import new
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from .models import Usuarios
