@@ -5,14 +5,50 @@
 
 {% block content %}
 
-<div class="menu">
-    <a href="">Home</a>
-    <a href="sign_up/">SignUp</a>
-    <a href="shop/">Tienda</a>
-    <a href="koi_lol/">League of Legends</a>
-    <a href="koitweet/">Koitweet</a>
-    <div>
-        <a>Hola</a>
+<div>
+    <div id="left-menu">
+        <div class="sub-menus">
+            <div class="menu-photo">
+                <img src="static\images\logo_inicio.svg" alt="Cagaste">
+            </div>
+            <div class="menu-text">
+                <a href="/">Inicio</a>
+            </div>
+        </div>
+        <div class="sub-menus">
+            <div class="menu-photo">
+                
+            </div>
+            <div class="menu-text">
+                <a href="sign_up/">Sign Up</a>
+            </div>
+        </div>
+        <div class="sub-menus">
+            <div class="menu-photo">
+                
+            </div>
+            <div class="menu-text">
+                <a href="profile/">Profile</a>
+            </div>
+            
+        </div>
+        <div class="sub-menus">
+            <div class="menu-photo">
+                
+            </div>
+            <div class="menu-text">
+                <a href="settings">Settings</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="message-box">
+        <form id="form-message" method="post">
+            {% csrf_token %}
+            <div class="to-text" placeholder="Speak to the World..." contenteditable="true"></div>
+            <textarea id="to-pass" style="display: none;"></textarea>
+            <input type="submit" id="send">
+        </form>
     </div>
 </div>
 
