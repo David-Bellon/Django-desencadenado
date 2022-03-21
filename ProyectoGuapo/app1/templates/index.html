@@ -7,40 +7,48 @@
 
 <div>
     <div id="left-menu">
-        <div class="sub-menus">
-            <div class="menu-photo">
-                <img src="static\images\logo_inicio.svg" alt="Cagaste">
-            </div>
-            <div class="menu-text">
-                <a href="/">Inicio</a>
-            </div>
-        </div>
-        <div class="sub-menus">
-            <div class="menu-photo">
+        <a href="/">
+            <div class="sub-menus">
                 
+                <div class="menu-photo">
+                    <img src="static\images\logo_inicio.svg" alt="Cagaste">
+                </div>
+                <div class="menu-text">
+                    Inicio
+                </div>
             </div>
-            <div class="menu-text">
-                <a href="sign_up/">Sign Up</a>
+        </a>
+        <a href="sign_up/">   
+            <div class="sub-menus">
+                <div class="menu-photo">
+
+                </div>
+                <div class="menu-text">
+                    Sign Up
+                </div>
             </div>
-        </div>
-        <div class="sub-menus">
-            <div class="menu-photo">
+        </a>
+        <a href="profile/">
+            <div class="sub-menus">
                 
+                <div class="menu-photo">
+                        <img src="static\images\profie-none.svg" alt="Cague">
+                </div>
+                <div class="menu-text">
+                    Profile
+                </div>
             </div>
-            <div class="menu-text">
-                <a href="profile/">Profile</a>
+        </a>
+        <a href="settings">
+            <div class="sub-menus">
+                <div class="menu-photo">
+                        
+                </div>
+                <div class="menu-text">
+                    Settings
+                </div>
             </div>
-            
-        </div>
-        <div class="sub-menus">
-            <div class="menu-photo">
-                
-            </div>
-            <div class="menu-text">
-                <a href="settings">Settings</a>
-            </div>
-            
-        </div>
+        </a>
     </div>
     <div id="message-box">
         <form id="form-message" method="post">
@@ -49,6 +57,30 @@
             <textarea id="to-pass" style="display: none;"></textarea>
             <input type="submit" id="send">
         </form>
+    </div>
+    <div class="user-status">
+        <div id="profile-picture">
+            <img src={{picture}} width="100%" height="100%">
+        </div>
+        {% if loged == False %}
+        <div id="not-logged">
+            <div id="text-not-logged">
+                <a href="sign_up">Click Here to Log In</a>
+            </div>
+        </div>
+        {% else %}
+        <div id="logged">
+            <div class="user-data">
+                User Name: {{user_name}}
+            </div>
+            <div class="user-data">
+                Followers: {{followers}}
+            </div>
+            <div class="user-data">
+                Total Likes: {{total_likes}}
+            </div>
+        </div>
+        {% endif %}
     </div>
 </div>
 
