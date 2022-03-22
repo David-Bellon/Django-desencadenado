@@ -3,7 +3,6 @@ from django.db import models
 # Create your models here.
 
 class Usuarios(models.Model):
-    user_id = models.AutoField(primary_key=True)
     followers = models.IntegerField(null=False)
     total_likes = models.IntegerField(null=False)
     name = models.CharField(max_length=255, null=False, unique=True)
