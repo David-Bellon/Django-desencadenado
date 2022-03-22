@@ -5,8 +5,8 @@ from django.db import models
 class Usuarios(models.Model):
     followers = models.IntegerField(null=False)
     total_likes = models.IntegerField(null=False)
-    name = models.CharField(max_length=255, null=False, unique=True)
-    email = models.EmailField(max_length=255, null=False, unique=True)
+    name = models.CharField(max_length=255, null=False)
+    email = models.EmailField(max_length=255, null=False)
     password = models.CharField(max_length=255, null=False)
 
 
