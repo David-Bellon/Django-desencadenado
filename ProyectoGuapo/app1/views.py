@@ -17,13 +17,13 @@ def index(request):
         #if cookie exists take the user name, followers, total likes
         #Look in the data base the profile picture and put in context
         cookie = request.COOKIES.get("name")
-        user = Usuarios.objects.filter(name = cookie).ge
+        user = Usuarios.objects.filter(name = cookie)
         context = {
             "profie-picture": "path to the picture in the db",
             "loged": True,
-            "user_name": user.name,
-            "followers": user.followers,
-            "total_ikes": user.total_likes
+            "user_name": user[0].name,
+            "followers": user[0].followers,
+            "total_ikes": user[0].total_likes
         }
 
     return render(request, 'index.html', context=context)
