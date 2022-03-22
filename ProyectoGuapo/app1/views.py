@@ -41,7 +41,7 @@ def sign_up(request):
             return render(request, "signup.html", context)
         else:
             password = make_password(password)
-            new_user = Usuarios.objects.create(name= user, password= password, email= email)
+            new_user = Usuarios.objects.create(name= user, password= password, email= email, followers = 0, total_likes = 0)
             new_user.save()
             #response = render(request, 'index.html')
             response = HttpResponseRedirect("/")
