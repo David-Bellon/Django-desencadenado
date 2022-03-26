@@ -23,7 +23,7 @@ def index(request):
             "loged": True,
             "user_name": user[0].name,
             "followers": user[0].followers,
-            "total_ikes": user[0].total_likes
+            "total_likes": user[0].total_likes
         }
 
     return render(request, 'index.html', context=context)
@@ -41,11 +41,11 @@ def sign_up(request):
             return render(request, "signup.html", context)
         else:
             password = make_password(password)
-            new_user = Usuarios.objects.create(name= user, password= password, email= email)
+            new_user = Usuarios.objects.create(name= user, password= password, email= email, followers = 0, total_likes = 0)
             new_user.save()
             #response = render(request, 'index.html')
             response = HttpResponseRedirect("/")
-            response.set_cookie('name', str(user), max_age=600)
+            response.set_cookie('name', str(user), max_age=60000)
             return response
         
     else:
