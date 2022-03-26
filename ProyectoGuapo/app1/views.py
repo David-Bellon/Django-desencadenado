@@ -23,7 +23,8 @@ def index(request):
             "loged": True,
             "user_name": user[0].name,
             "followers": user[0].followers,
-            "total_likes": user[0].total_likes
+            "total_likes": user[0].total_likes,
+            "cookie": cookie
         }
 
     return render(request, 'index.html', context=context)
@@ -53,3 +54,6 @@ def sign_up(request):
                 "meta": Usuarios.objects.all()
             }
         return render(request, "signup.html", context=context)
+
+def profile(request):
+    return render(request, "profile.html")
