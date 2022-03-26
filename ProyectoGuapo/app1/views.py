@@ -55,5 +55,8 @@ def sign_up(request):
             }
         return render(request, "signup.html", context=context)
 
-def profile(request):
-    return render(request, "profile.html")
+def profile(request, profile_name):
+    context = {
+        "name": profile_name
+    }
+    return render(request, "profile.html", context=context)
