@@ -2,13 +2,14 @@ from urllib import response
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.urls import reverse
-from .models import Usuarios
+from .models import Tweets, Usuarios
 from django.contrib.auth.hashers import make_password
+import json
 # Create your views here.
 
 def index(request):
     context = {}
-    if request.COOKIES.get("name") is None:
+    if request.COOKIES.get("id") is None:
         context = {
             "picture": "static\images\profie-none.svg",
             "loged": False
@@ -16,8 +17,8 @@ def index(request):
     else:
         #if cookie exists take the user name, followers, total likes
         #Look in the data base the profile picture and put in context
-        cookie = request.COOKIES.get("name")
-        user = Usuarios.objects.filter(name = cookie)
+        cookie = request.COOKIES.get("id")
+        user = Usuarios.objects.filter(id = cookie)
         context = {
             "profie-picture": "path to the picture in the db",
             "loged": True,
@@ -46,7 +47,7 @@ def sign_up(request):
             new_user.save()
             #response = render(request, 'index.html')
             response = HttpResponseRedirect("/")
-            response.set_cookie('name', str(user), max_age=60000)
+            response.set_cookie('id', str(new_user.id), max_age=60000)
             return response
         
     else:
@@ -60,3 +61,14 @@ def profile(request, profile_name):
         "name": profile_name
     }
     return render(request, "profile.html", context=context)
+
+def tweet(request):
+    if request.method == "POST":
+        data = json.loads(request.body.decode("UTF-8"))
+        cookie = request.COOKIES.get("id")
+        user = Usuarios.objects.filter(id = cookie)[0]
+        text = data["text"]
+        new_tweet = Tweets.objects.create(text= text, user=user)
+        new_tweet.save()
+        response = HttpResponseRedirect("/")
+        return response

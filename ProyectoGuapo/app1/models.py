@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib import admin
 
 # Create your models here.
 
@@ -9,8 +10,12 @@ class Usuarios(models.Model):
     email = models.EmailField(max_length=255, null=False)
     password = models.CharField(max_length=255, null=False)
 
-    def getFollowers(self):
-        return self.followers
+class Tweets(models.Model):
+    text = models.CharField(max_length=255, null=False)
+    user = models.ForeignKey(Usuarios, on_delete=models.CASCADE)
+    date = models.DateField(auto_now_add=True)
+    likes = models.IntegerField(default=0)
 
-    def getTotalLikes(self):
-        return self.total_likes
+
+admin.site.register(Usuarios)
+admin.site.register(Tweets)
