@@ -51,12 +51,11 @@
         </a>
     </div>
     <div id="message-box">
-        <form id="form-message" method="post">
-            {% csrf_token %}
+        <div id="form-message">
             <div class="to-text" placeholder="Speak to the World..." contenteditable="true"></div>
             <textarea id="to-pass" style="display: none;"></textarea>
-            <button type="submit" id="send">Twittear</button>
-        </form>
+            <button id="send">Twittear</button>
+        </div>
     </div>
     <div class="user-status">
         <div id="profile-picture">
