@@ -4,10 +4,12 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/index_css.css' %}">
+        <script src="{% static 'js/index.js' %}"></script>
         <title>{% block title %} Que pasa crack {% endblock %}</title>
     </head>
     <body>
-        <link rel="stylesheet" type="text/css" href="{% static 'css/index_css.css' %}">
+        
         {% block content %}{% endblock %}
     </body>
 </html>
