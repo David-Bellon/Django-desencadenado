@@ -6,6 +6,8 @@ document.getElementById("send").addEventListener("click", function(){
             method: "POST",
             body: JSON.stringify({text:text}),
             headers: { "X-CSRFToken": csrftoken },
+        }).then(() => {
+            document.getElementById("to-text").innerHTML = "";
         })
     }
     

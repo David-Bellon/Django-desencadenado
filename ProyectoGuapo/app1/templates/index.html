@@ -21,18 +21,18 @@
         <a href="sign_up/">   
             <div class="sub-menus">
                 <div class="menu-photo">
-
+                    <img src="static\images\sign_up.svg" alt="Cagu">
                 </div>
                 <div class="menu-text">
                     Sign Up
                 </div>
             </div>
         </a>
-        <a href="profile/{{cookie}}">
+        <a href="profile/{{user_name}}">
             <div class="sub-menus">
                 
                 <div class="menu-photo">
-                        <img src="static\images\profie-none.svg" alt="Cague">
+                    <img src="static\images\profie-none.svg" alt="Cague">
                 </div>
                 <div class="menu-text">
                     Profile
@@ -42,7 +42,7 @@
         <a href="settings">
             <div class="sub-menus">
                 <div class="menu-photo">
-                        
+                    <img src="static\images\settings.svg" alt="Cagó">
                 </div>
                 <div class="menu-text">
                     Settings
@@ -58,7 +58,7 @@
     </div>
     <div class="user-status">
         <div id="profile-picture">
-            <img src={{picture}} width="100%" height="100%">
+            <img src={{profile_picture}} width="100%" height="100%">
         </div>
         {% if loged == False %}
         <div id="not-logged">

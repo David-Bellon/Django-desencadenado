@@ -3,7 +3,7 @@
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/sing_up.css' %}">
 <div id="sing_up_box">
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <h2>Sign Up</h2>
         <div class="text_input">
@@ -18,10 +18,13 @@
             <label>Contraseña</label><br>
             <input type="password" name="passwordfield"><br><br>
         </div>
+        <div class="text_input">
+            <label>File</label><br>
+            <input type="file" name="imagefield"><br><br>
+        </div>
         <div id="error_message">
             <h4>{{error}}</h4>
         </div>
-        
         <div id="sing_button">
             <button type="submit" title="SingUp">Sign Up</button><br>
         </div>

@@ -9,6 +9,7 @@ class Usuarios(models.Model):
     name = models.CharField(max_length=255, null=False)
     email = models.EmailField(max_length=255, null=False)
     password = models.CharField(max_length=255, null=False)
+    image = models.ImageField(null=True, upload_to= "profile")
 
 class Tweets(models.Model):
     text = models.CharField(max_length=255, null=False)
